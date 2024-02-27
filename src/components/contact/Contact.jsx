@@ -2,7 +2,6 @@ import { useRef, useState } from "react"
 import "./contact.scss"
 import { motion, useInView } from "framer-motion"
 import emailjs from "@emailjs/browser"
-import { serviceId, templateId, userId } from "../../config/emailKeys"
 
 const variants = {
   initial: {
@@ -14,7 +13,7 @@ const variants = {
     opacity: 1,
     transition: {
       duration: 0.5,
-      staggerChildren: 0.1,
+      staggerChildren: 0.3,
     },
   },
 }
@@ -31,7 +30,12 @@ const Contact = () => {
     e.preventDefault()
 
     emailjs
-      .sendForm(serviceId, templateId, formRef.current, userId)
+      .sendForm(
+        import.meta.env.VITE_APP_SERVICEID,
+        import.meta.env.VITE_APP_TEMPLATEID,
+        formRef.current,
+        import.meta.env.VITE_APP_USERID
+      )
 
       .then(
         (result) => {
@@ -54,12 +58,12 @@ const Contact = () => {
       <motion.div className="textContainer" variants={variants}>
         <motion.h1 variants={variants}>Let’s work together</motion.h1>
         <motion.div className="item" variants={variants}>
-          <motion.h2 whileHover={{ color: "orange" }}>Mail</motion.h2>
+          <motion.h2>Mail</motion.h2>
           <span>aakash2jadhav@gmail.com</span>
         </motion.div>
 
         <motion.div className="item" variants={variants}>
-          <motion.h2 whileHover={{ color: "orange" }}>Phone</motion.h2>
+          <motion.h2>Phone</motion.h2>
           <span>+91 7769978774</span>
         </motion.div>
       </motion.div>
