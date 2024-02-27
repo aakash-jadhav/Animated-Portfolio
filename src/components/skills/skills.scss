@@ -39,6 +39,9 @@
     flex-wrap: wrap;
     padding: 1em;
     justify-content: center;
+    @include mobile {
+      gap: 1em;
+    }
 
     li {
       background-color: #2a2f4c;
@@ -50,6 +53,9 @@
       align-items: center;
       aspect-ratio: 2/1;
       justify-content: space-evenly;
+      @include mobile {
+        aspect-ratio: 3/1;
+      }
 
       .svgLogo {
         width: 30%; // Updated to allocate 30% for image
