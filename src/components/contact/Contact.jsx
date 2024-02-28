@@ -1,6 +1,8 @@
 import { useRef, useState } from "react"
 import "./contact.scss"
 import { motion, useInView } from "framer-motion"
+import { Toaster, toast } from "sonner"
+
 import emailjs from "@emailjs/browser"
 
 const variants = {
@@ -110,9 +112,12 @@ const Contact = () => {
           <motion.button whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
             Submit
           </motion.button>
-          {error && "Error"}
-          {success && "Success"}
         </motion.form>
+      </div>
+      <div className="toast-container">
+        <Toaster richColors position="top-center" />
+        {error && toast.error("Failed to send the message.")}
+        {success && toast.success("Message sent successfully.")}
       </div>
     </motion.div>
   )
