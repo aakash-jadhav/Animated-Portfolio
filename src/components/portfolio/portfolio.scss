@@ -21,6 +21,9 @@
       height: 10px;
       background-color: white;
       border-radius: 10px;
+      @include mobile {
+        display: none;
+      }
     }
   }
 
@@ -43,6 +46,8 @@
 
       @include mobile {
         flex-direction: column;
+        padding: 0 0.7em;
+        gap: 10px;
       }
 
       .imageContainer {
@@ -57,11 +62,11 @@
         img {
           width: 100%;
           height: 100%;
-          object-fit: cover;
+          object-fit: contain;
 
-          @include mobile {
-            object-fit: cover;
-          }
+          // @include mobile {
+          //   object-fit: contain;
+          // }
         }
       }
 

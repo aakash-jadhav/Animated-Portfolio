@@ -73,8 +73,8 @@ const Hero = () => {
           <motion.div variants={textVariants} className="buttons">
             <motion.a
               variants={textVariants}
-              download="/Aakash-Ujwal-Jadahv.pdf"
-              href=""
+              download="resume.pdf"
+              href="/resume.pdf"
               whileHover={{ scale: 1.2 }}
               transition={{ duration: 0.5 }}
             >
