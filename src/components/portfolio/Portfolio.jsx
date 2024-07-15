@@ -22,7 +22,7 @@ const items = [
     title: "Inventory Management",
     img: "/inventory.png",
     desc: "Bootstrap's clean design meets Firebase's power. Take control of your inventory. Effortless adding, searching, and deleting. Streamline your stock, empower your business.",
-    demo: "https://invoice-a2e0c.web.app/",
+    demo: "https://electrify-dab2d.web.app/",
   },
   {
     id: 4,
