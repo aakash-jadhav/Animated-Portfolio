@@ -1,6 +1,6 @@
-import { useRef } from "react"
-import "./portfolio.scss"
-import { motion, useScroll, useSpring, useTransform } from "framer-motion"
+import { useRef } from "react";
+import "./portfolio.scss";
+import { motion, useScroll, useSpring, useTransform } from "framer-motion";
 
 const items = [
   {
@@ -40,21 +40,21 @@ const items = [
   },
   {
     id: 6,
-    title: "Meme Generator",
-    img: "/mDev.png",
-    desc: "Make memes, share laughs! Add captions to popular meme images, explore a library of hilarious options, and spread the fun online.",
-    demo: "https://meme-developer.netlify.app/",
+    title: "Next.js Music",
+    img: "/music.png",
+    desc: "Learn, practice, and master music theory. Dive deep into scales, chords, intervals, and music notation. Interactive exercises, quizzes, and a comprehensive theory library.",
+    demo: "https://next-musics.netlify.app/",
   },
-]
+];
 
 const Single = ({ item }) => {
-  const ref = useRef()
+  const ref = useRef();
 
   const { scrollYProgress } = useScroll({
     target: ref,
-  })
+  });
 
-  const y = useTransform(scrollYProgress, [0, 1], [-300, 300])
+  const y = useTransform(scrollYProgress, [0, 1], [-300, 300]);
 
   return (
     <section>
@@ -77,21 +77,21 @@ const Single = ({ item }) => {
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
 const Portfolio = () => {
-  const ref = useRef()
+  const ref = useRef();
 
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ["end end", "start start"],
-  })
+  });
 
   const scaleX = useSpring(scrollYProgress, {
     stiffness: 100,
     damping: 30,
-  })
+  });
 
   return (
     <div className="portfolio" ref={ref}>
@@ -102,7 +102,7 @@ const Portfolio = () => {
         <Single item={item} key={item.id} />
       ))}
     </div>
-  )
-}
+  );
+};
 
-export default Portfolio
+export default Portfolio;
